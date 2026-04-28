@@ -274,7 +274,7 @@
         <label for="telefone">WhatsApp / Telefone</label>
         <input type="tel" id="telefone" placeholder="(11) 99999-9999" autocomplete="off" oninput="mascaraTel(this)" maxlength="15" />
       </div>
-      <button class="btn-primary" onclick="irParaStep2()">Próximo — Escolher Caixinhas →</button>
+      <button type="button" class="btn-primary" onclick="irParaStep2()">Próximo — Escolher Caixinhas →</button>
     </div>
   </div>
 
@@ -288,9 +288,9 @@
           <div class="box-name">Caixinha 4 doces</div>
           <div class="box-price">R$ 16,00</div>
           <div class="box-qty-control">
-            <button class="qty-btn" onclick="alterarQtdCaixa('cx4',-1)">−</button>
+            <button type="button" class="qty-btn" onclick="alterarQtdCaixa('cx4',-1)">−</button>
             <span class="qty-display" id="qty-cx4">0</span>
-            <button class="qty-btn" onclick="alterarQtdCaixa('cx4',1)">+</button>
+            <button type="button" class="qty-btn" onclick="alterarQtdCaixa('cx4',1)">+</button>
           </div>
         </div>
         <div class="box-card" data-id="cx6">
@@ -298,9 +298,9 @@
           <div class="box-name">Caixinha 6 doces</div>
           <div class="box-price">R$ 24,00</div>
           <div class="box-qty-control">
-            <button class="qty-btn" onclick="alterarQtdCaixa('cx6',-1)">−</button>
+            <button type="button" class="qty-btn" onclick="alterarQtdCaixa('cx6',-1)">−</button>
             <span class="qty-display" id="qty-cx6">0</span>
-            <button class="qty-btn" onclick="alterarQtdCaixa('cx6',1)">+</button>
+            <button type="button" class="qty-btn" onclick="alterarQtdCaixa('cx6',1)">+</button>
           </div>
         </div>
         <div class="box-card" data-id="cx6r">
@@ -308,9 +308,9 @@
           <div class="box-name">6 doces + 1 Rosa</div>
           <div class="box-price">R$ 30,00</div>
           <div class="box-qty-control">
-            <button class="qty-btn" onclick="alterarQtdCaixa('cx6r',-1)">−</button>
+            <button type="button" class="qty-btn" onclick="alterarQtdCaixa('cx6r',-1)">−</button>
             <span class="qty-display" id="qty-cx6r">0</span>
-            <button class="qty-btn" onclick="alterarQtdCaixa('cx6r',1)">+</button>
+            <button type="button" class="qty-btn" onclick="alterarQtdCaixa('cx6r',1)">+</button>
           </div>
         </div>
         <div class="box-card" data-id="cx9">
@@ -318,16 +318,16 @@
           <div class="box-name">Caixinha 9 doces</div>
           <div class="box-price">R$ 35,00</div>
           <div class="box-qty-control">
-            <button class="qty-btn" onclick="alterarQtdCaixa('cx9',-1)">−</button>
+            <button type="button" class="qty-btn" onclick="alterarQtdCaixa('cx9',-1)">−</button>
             <span class="qty-display" id="qty-cx9">0</span>
-            <button class="qty-btn" onclick="alterarQtdCaixa('cx9',1)">+</button>
+            <button type="button" class="qty-btn" onclick="alterarQtdCaixa('cx9',1)">+</button>
           </div>
         </div>
       </div>
       <div style="height:24px;"></div>
       <div style="display:flex;gap:10px;align-items:center;">
-        <button class="btn-secondary" onclick="irPara(1)">← Voltar</button>
-        <button class="btn-primary" style="flex:1" onclick="irParaStep3()">Próximo — Escolher Sabores →</button>
+        <button type="button" class="btn-secondary" onclick="irPara(1)">← Voltar</button>
+        <button type="button" class="btn-primary" style="flex:1" onclick="irParaStep3()">Próximo — Escolher Sabores →</button>
       </div>
     </div>
   </div>
@@ -338,8 +338,8 @@
       <div class="card-subtitle">Distribua os sabores em cada caixinha. Pode misturar à vontade!</div>
       <div id="saboresContainer"></div>
       <div style="display:flex;gap:10px;align-items:center;margin-top:8px;">
-        <button class="btn-secondary" onclick="irPara(2)">← Voltar</button>
-        <button class="btn-primary" style="flex:1" onclick="irParaStep4()">Ver Resumo →</button>
+        <button type="button" class="btn-secondary" onclick="irPara(2)">← Voltar</button>
+        <button type="button" class="btn-primary" style="flex:1" onclick="irParaStep4()">Ver Resumo →</button>
       </div>
     </div>
   </div>
@@ -365,8 +365,8 @@
       </div>
       <div style="height:8px;"></div>
       <div style="display:flex;gap:10px;align-items:center;">
-        <button class="btn-secondary" onclick="irPara(3)">← Voltar</button>
-        <button class="btn-primary" style="flex:1" onclick="irParaStep5()">Ver Resumo →</button>
+        <button type="button" class="btn-secondary" onclick="irPara(3)">← Voltar</button>
+        <button type="button" class="btn-primary" style="flex:1" onclick="irParaStep5()">Ver Resumo →</button>
       </div>
     </div>
   </div>
@@ -380,8 +380,8 @@
       <div class="resumo-note">⚠️ O pagamento será combinado depois da confirmação.</div>
       <div style="height:20px;"></div>
       <div style="display:flex;gap:10px;align-items:center;">
-        <button class="btn-secondary" onclick="irPara(4)">← Voltar</button>
-        <button class="btn-primary" style="flex:1" onclick="confirmarReserva()">✅ Confirmar Reserva!</button>
+        <button type="button" class="btn-secondary" onclick="irPara(4)">← Voltar</button>
+        <button type="button" class="btn-primary" style="flex:1" onclick="confirmarReserva()">✅ Confirmar Reserva!</button>
       </div>
     </div>
   </div>
@@ -398,15 +398,15 @@
       <div id="resumoSucesso"></div>
       <div style="height:16px;"></div>
       <div style="display:flex;gap:10px;flex-direction:column;">
-        <button class="btn-yellow" style="justify-content:center;font-size:0.95rem;padding:14px;" onclick="baixarComprovante()">⬇ Baixar Comprovante (JPEG)</button>
-        <button class="btn-primary" onclick="novaReserva()">🌸 Fazer Nova Reserva</button>
+        <button type="button" class="btn-yellow" style="justify-content:center;font-size:0.95rem;padding:14px;" onclick="baixarComprovante()">⬇ Baixar Comprovante (JPEG)</button>
+        <button type="button" class="btn-primary" onclick="novaReserva()">🌸 Fazer Nova Reserva</button>
       </div>
     </div>
   </div>
 
   <div class="section-divider">Área Administrativa</div>
   <div style="text-align:center;margin-bottom:40px;">
-    <button class="btn-secondary" onclick="abrirLoginAdmin()">🔒 Acessar Painel Admin</button>
+    <button type="button" class="btn-secondary" onclick="abrirLoginAdmin()">🔒 Acessar Painel Admin</button>
   </div>
 
 </div>
@@ -419,9 +419,9 @@
     <p>Acesso restrito. Informe a senha para continuar.</p>
     <input type="password" id="adminSenha" placeholder="Senha" onkeydown="if(event.key==='Enter')verificarSenha()" />
     <div class="admin-error" id="adminError">Senha incorreta. Tente novamente.</div>
-    <button class="btn-primary" onclick="verificarSenha()">Entrar</button>
+    <button type="button" class="btn-primary" onclick="verificarSenha()">Entrar</button>
     <div style="margin-top:12px;">
-      <button class="btn-secondary" style="width:100%;justify-content:center;" onclick="fecharLoginAdmin()">Cancelar</button>
+      <button type="button" class="btn-secondary" style="width:100%;justify-content:center;" onclick="fecharLoginAdmin()">Cancelar</button>
     </div>
   </div>
 </div>
@@ -435,9 +435,9 @@
         <div style="font-size:0.82rem;font-weight:500;color:var(--text-mid);margin-top:2px;">Todas as encomendas registradas</div>
       </div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
-        <button class="btn-yellow" onclick="exportarCSV()">⬇ Exportar CSV</button>
-        <button class="btn-secondary" style="font-size:0.78rem;padding:8px 14px;" onclick="limparDados()">🗑 Limpar</button>
-        <button class="btn-secondary" style="font-size:0.78rem;padding:8px 14px;" onclick="fecharAdmin()">✕ Fechar</button>
+        <button type="button" class="btn-yellow" onclick="exportarCSV()">⬇ Exportar CSV</button>
+        <button type="button" class="btn-secondary" style="font-size:0.78rem;padding:8px 14px;" onclick="limparDados()">🗑 Limpar</button>
+        <button type="button" class="btn-secondary" style="font-size:0.78rem;padding:8px 14px;" onclick="fecharAdmin()">✕ Fechar</button>
       </div>
     </div>
     <div id="adminReportStats"></div>
@@ -471,7 +471,7 @@ let reservaAtual = null;
 
 // JSONBin
 const BIN_ID  = '69f0f892856a68218982dc86';
-const BIN_KEY = '$2a$10$j01Dh7PCrJqF5kuZ/J/gR.Hp/yChvp5ltr951Drie6a7MarQ3Wzc.';
+const BIN_KEY = '$2a$10$BgsDnAUkFrvB3DqOa1vB1eMMZ6r6Dxsut5h/S7GHSgaqX4w88esfa';
 const BIN_URL = 'https://api.jsonbin.io/v3/b/' + BIN_ID;
 const HEADERS = { 'Content-Type':'application/json', 'X-Master-Key': BIN_KEY };
 
@@ -567,7 +567,7 @@ function construirSaboresUI(){
         const grid=sec.querySelector('#'+(s.tipo==='trufa'?'grid_truf_':'grid_trad_')+key);
         const dc=document.createElement('div');
         dc.className='doce-card'; dc.id='dc_'+key+'_'+s.id;
-        dc.innerHTML=`<div class="doce-emoji">${s.emoji}</div><div class="doce-name">${s.nome}</div><div class="doce-qty"><button onclick="alterarSabor('${key}','${s.id}',-1)">−</button><span class="count" id="cnt_${key}_${s.id}">0</span><button onclick="alterarSabor('${key}','${s.id}',1)">+</button></div>`;
+        dc.innerHTML=`<div class="doce-emoji">${s.emoji}</div><div class="doce-name">${s.nome}</div><div class="doce-qty"><button type="button" onclick="alterarSabor('${key}','${s.id}',-1)">−</button><span class="count" id="cnt_${key}_${s.id}">0</span><button type="button" onclick="alterarSabor('${key}','${s.id}',1)">+</button></div>`;
         grid.appendChild(dc);
       });
     }
