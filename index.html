@@ -470,7 +470,7 @@ let reservaAtual = null;
 
 // JSONBin
 const BIN_ID  = '69f0bf7936566621a8fff41c';
-const BIN_KEY = '$2a$10$BgsDnAUkFrvB3DqOa1vB1eMMZ6r6Dxsut5h/S7GHSgaqX4w88esfa';
+const BIN_KEY = '\';
 const BIN_URL = 'https://api.jsonbin.io/v3/b/' + BIN_ID;
 const HEADERS = { 'Content-Type':'application/json', 'X-Master-Key': BIN_KEY };
 
@@ -623,7 +623,7 @@ async function confirmarReserva(){
   const localFull = localRet === 'Direto com vendedor' && vendRet ? localRet + ' (' + vendRet + ')' : localRet;
   reservaAtual={codigo,data:agora,nome:clienteAtual.nome,tel:clienteAtual.tel,itens,total:totalVal,local:localFull};
   // feedback visual durante o envio
-  const btnConfirmar = document.querySelector('#sec4 .btn-primary');
+  const btnConfirmar = document.querySelector('#sec5 .btn-primary');
   if(btnConfirmar){ btnConfirmar.textContent='Salvando... ⏳'; btnConfirmar.disabled=true; }
   try {
     const res=await getReservas(); res.push(reservaAtual); await saveReservas(res);
@@ -633,6 +633,7 @@ async function confirmarReserva(){
     return;
   }
   if(btnConfirmar){ btnConfirmar.textContent='✅ Confirmar Reserva!'; btnConfirmar.disabled=false; }
+  irPara(6);
   document.getElementById('codigoReserva').textContent=codigo;
   document.getElementById('resumoSucesso').innerHTML=`<div style="background:var(--pink-pale);border-radius:14px;padding:16px;text-align:left;font-size:0.88rem;font-weight:500;line-height:1.9;margin-bottom:8px;"><p><strong>👤 Nome:</strong> ${clienteAtual.nome}</p><p><strong>📱 WhatsApp:</strong> ${clienteAtual.tel}</p><p><strong>📍 Retirada:</strong> ${localFull}</p><p><strong>📦 Caixinhas:</strong> ${itens.length} unidade(s)</p><p><strong>💰 Total:</strong> R$ ${totalVal},00</p></div>`;
   irPara(5);
