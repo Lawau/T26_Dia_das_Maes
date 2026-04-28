@@ -22,10 +22,8 @@ Clique em "Área Administrativa" no rodapé e use a senha configurada no código
 
 ## Publicação
 
-Hospedado via **GitHub Pages** — acesse em:  
-`https://<seu-usuario>.github.io/docinhos-reserva/`
+Hospedado via **GitHub Pages**
 
 ## Observação sobre dados
 
-As reservas ficam salvas no `localStorage` do navegador de cada cliente.  
-Para centralizar os dados, integre com Google Sheets via Apps Script.
+As reservas ficam salvas pelo JSONBin.
