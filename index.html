@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reserva de Docinhos — Dia das Mães</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Pacifico&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
       --pink-deep:   #D6004D;
@@ -71,7 +71,7 @@
     .star2 { width: 22px; top: 10px; right: 115px; }
     .star3 { width: 28px; bottom: 14px; right: 112px; }
     header h1 {
-      font-family: 'Pacifico', cursive;
+      font-family: 'Cherry Bomb One', cursive;
       font-size: clamp(2.2rem, 6.5vw, 3.6rem);
       color: var(--white);
       text-shadow: 3px 4px 0px rgba(0,0,0,0.18);
@@ -146,7 +146,7 @@
     }
     .box-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .box-name { font-weight: 700; font-size: 0.85rem; color: var(--text-dark); line-height: 1.3; margin-bottom: 4px; }
-    .box-price { font-family: 'Pacifico', cursive; color: var(--pink-deep); font-size: 1.05rem; }
+    .box-price { font-family: 'Cherry Bomb One', cursive; color: var(--pink-deep); font-size: 1.05rem; }
     .box-qty-control { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; }
     .qty-btn {
       width: 30px; height: 30px; border-radius: 50%;
@@ -180,12 +180,12 @@
     .resumo-item { background: var(--pink-pale); border-radius: var(--radius-lg); padding: 18px 20px; margin-bottom: 12px; border: 2px solid var(--pink-light); }
     .resumo-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
     .resumo-item-name { font-weight: 700; font-size: 0.9rem; color: var(--text-dark); }
-    .resumo-item-price { font-family: 'Pacifico', cursive; color: var(--pink-deep); font-size: 1.1rem; }
+    .resumo-item-price { font-family: 'Cherry Bomb One', cursive; color: var(--pink-deep); font-size: 1.1rem; }
     .resumo-sabores { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
     .sabor-tag { background: var(--pink-light); color: var(--text-mid); font-size: 0.7rem; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
     .resumo-total { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: linear-gradient(135deg,var(--pink-deep),var(--pink-main)); border-radius: var(--radius-lg); color: white; margin-top: 8px; }
     .resumo-total span:first-child { font-weight: 700; font-size: 0.95rem; }
-    .resumo-total span:last-child { font-family: 'Pacifico', cursive; font-size: 1.5rem; }
+    .resumo-total span:last-child { font-family: 'Cherry Bomb One', cursive; font-size: 1.5rem; }
     .resumo-note { text-align: center; font-size: 0.78rem; font-weight: 500; color: var(--text-mid); margin-top: 12px; font-style: italic; }
 
     /* BUTTONS */
@@ -199,11 +199,11 @@
     /* SUCCESS */
     .success-icon { font-size: 5rem; text-align: center; margin-bottom: 16px; animation: pop 0.5s ease; }
     @keyframes pop { 0%{transform:scale(0)} 70%{transform:scale(1.2)} 100%{transform:scale(1)} }
-    .success-title { font-family: 'Pacifico',cursive; font-size: 1.8rem; color: var(--pink-deep); text-align: center; margin-bottom: 8px; }
+    .success-title { font-family: 'Cherry Bomb One', cursive; font-size: 1.8rem; color: var(--pink-deep); text-align: center; margin-bottom: 8px; }
     .success-sub { text-align: center; color: var(--text-mid); font-size: 0.88rem; font-weight: 500; line-height: 1.6; margin-bottom: 24px; }
     .codigo-reserva { background: linear-gradient(135deg,var(--pink-light),#FFD6E8); border: 2.5px dashed var(--pink-main); border-radius: var(--radius-lg); padding: 20px; text-align: center; margin-bottom: 20px; }
     .codigo-reserva small { display: block; font-size: 0.7rem; font-weight: 700; color: var(--text-mid); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-    .codigo-reserva strong { font-family: 'Pacifico',cursive; font-size: 2rem; color: var(--pink-deep); letter-spacing: 4px; }
+    .codigo-reserva strong { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 900; color: var(--pink-deep); letter-spacing: 4px; }
 
     /* ADMIN */
     .admin-overlay { position: fixed; inset: 0; background: rgba(60,10,30,0.65); backdrop-filter: blur(8px); z-index: 200; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -217,7 +217,7 @@
     /* RELATÓRIO */
     .report-summary { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 20px; }
     .stat-card { background: white; border-radius: 14px; padding: 16px; text-align: center; box-shadow: var(--shadow); border: 2px solid var(--pink-light); }
-    .stat-card .stat-val { font-family: 'Pacifico',cursive; font-size: 1.7rem; color: var(--pink-deep); }
+    .stat-card .stat-val { font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 1.7rem; color: var(--pink-deep); }
     .stat-card .stat-label { font-size: 0.68rem; font-weight: 600; color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
     .no-data { text-align: center; padding: 40px; color: var(--text-mid); font-size: 0.88rem; font-weight: 500; }
     .report-table-wrap { overflow-x: auto; margin-top: 16px; }
@@ -270,7 +270,7 @@
       </div>
       <div class="form-group">
         <label for="telefone">WhatsApp / Telefone</label>
-        <input type="tel" id="telefone" placeholder="(11) 99999-9999" autocomplete="off" />
+        <input type="tel" id="telefone" placeholder="(11) 99999-9999" autocomplete="off" oninput="mascaraTel(this)" maxlength="15" />
       </div>
       <button class="btn-primary" onclick="irParaStep2()">Próximo — Escolher Caixinhas →</button>
     </div>
@@ -439,8 +439,26 @@ let saboresPorCaixa = {};
 let clienteAtual = { nome:'', tel:'' };
 let reservaAtual = null;
 
-function getReservas(){ try{ return JSON.parse(localStorage.getItem('reservas_dia_das_maes')||'[]'); }catch{return [];} }
-function saveReservas(a){ localStorage.setItem('reservas_dia_das_maes', JSON.stringify(a)); }
+// JSONBin
+const BIN_ID  = '69f0bf7936566621a8fff41c';
+const BIN_KEY = '\';
+const BIN_URL = 'https://api.jsonbin.io/v3/b/' + BIN_ID;
+const HEADERS = { 'Content-Type':'application/json', 'X-Master-Key': BIN_KEY };
+
+async function getReservas(){
+  try {
+    const res = await fetch(BIN_URL+'/latest', { headers: HEADERS });
+    const json = await res.json();
+    return json.record?.reservas || [];
+  } catch { return []; }
+}
+async function saveReservas(arr){
+  await fetch(BIN_URL, {
+    method: 'PUT',
+    headers: HEADERS,
+    body: JSON.stringify({ reservas: arr })
+  });
+}
 function gerarCodigo(){ const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let r=''; for(let i=0;i<6;i++) r+=c[Math.floor(Math.random()*c.length)]; return r; }
 
 function irPara(n){
@@ -531,7 +549,7 @@ function construirResumo(){
   }
   container.innerHTML+=`<div class="resumo-total"><span>Total da encomenda</span><span>R$ ${total},00</span></div>`;
 }
-function confirmarReserva(){
+async function confirmarReserva(){
   const codigo=gerarCodigo(), agora=new Date().toLocaleString('pt-BR');
   let totalVal=0; const itens=[];
   for(const [cxId,qty] of Object.entries(caixasQtd)){
@@ -544,7 +562,17 @@ function confirmarReserva(){
     }
   }
   reservaAtual={codigo,data:agora,nome:clienteAtual.nome,tel:clienteAtual.tel,itens,total:totalVal};
-  const res=getReservas(); res.push(reservaAtual); saveReservas(res);
+  // feedback visual durante o envio
+  const btnConfirmar = document.querySelector('#sec4 .btn-primary');
+  if(btnConfirmar){ btnConfirmar.textContent='Salvando... ⏳'; btnConfirmar.disabled=true; }
+  try {
+    const res=await getReservas(); res.push(reservaAtual); await saveReservas(res);
+  } catch(e) {
+    alert('Erro ao salvar reserva. Verifique sua conexão e tente novamente.');
+    if(btnConfirmar){ btnConfirmar.textContent='✅ Confirmar Reserva!'; btnConfirmar.disabled=false; }
+    return;
+  }
+  if(btnConfirmar){ btnConfirmar.textContent='✅ Confirmar Reserva!'; btnConfirmar.disabled=false; }
   document.getElementById('codigoReserva').textContent=codigo;
   document.getElementById('resumoSucesso').innerHTML=`<div style="background:var(--pink-pale);border-radius:14px;padding:16px;text-align:left;font-size:0.88rem;font-weight:500;line-height:1.9;margin-bottom:8px;"><p><strong>👤 Nome:</strong> ${clienteAtual.nome}</p><p><strong>📱 WhatsApp:</strong> ${clienteAtual.tel}</p><p><strong>📦 Caixinhas:</strong> ${itens.length} unidade(s)</p><p><strong>💰 Total:</strong> R$ ${totalVal},00</p></div>`;
   irPara(5);
@@ -577,15 +605,15 @@ function baixarComprovante(){
   let y=PAD;
   for(const l of linhas){
     const h=getH(l); ctx.textAlign='center';
-    if(l.t==='header'){ctx.fillStyle=grad;ctx.beginPath();ctx.roundRect(0,y-PAD,W,90+PAD,0);ctx.fill();ctx.font='bold 34px Georgia,serif';ctx.fillStyle='white';ctx.fillText('Menu Doces',W/2,y+38);ctx.font='500 13px Arial,sans-serif';ctx.fillStyle='rgba(255,255,255,0.88)';ctx.fillText('Especial Dia das Mães 🌸',W/2,y+62);}
-    else if(l.t==='label'){ctx.font='700 11px Arial,sans-serif';ctx.fillStyle='#7A3A55';ctx.fillText(l.txt,W/2,y+h-4);}
-    else if(l.t==='code'){ctx.font='bold 36px Georgia,serif';ctx.fillStyle='#D6004D';ctx.fillText(l.txt,W/2,y+h-6);}
-    else if(l.t==='field'){ctx.textAlign='left';ctx.font='700 13px Arial,sans-serif';ctx.fillStyle='#7A3A55';const lw=ctx.measureText(l.label+': ').width;ctx.fillText(l.label+': ',PAD,y+h-4);ctx.font='500 13px Arial,sans-serif';ctx.fillStyle='#3D1A2B';ctx.fillText(l.val,PAD+lw,y+h-4);ctx.textAlign='center';}
-    else if(l.t==='section'){ctx.fillStyle='rgba(214,0,77,0.07)';ctx.beginPath();ctx.roundRect(PAD,y,W-PAD*2,h+2,8);ctx.fill();ctx.font='700 11px Arial,sans-serif';ctx.fillStyle='#D6004D';ctx.fillText(l.txt,W/2,y+h-4);}
-    else if(l.t==='item-name'){ctx.textAlign='left';ctx.font='700 13px Arial,sans-serif';ctx.fillStyle='#3D1A2B';ctx.fillText(l.txt,PAD+8,y+h-4);ctx.textAlign='center';}
-    else if(l.t==='item-sab'){ctx.textAlign='left';ctx.font='500 11px Arial,sans-serif';ctx.fillStyle='#7A3A55';ctx.fillText(l.txt,PAD+16,y+h-4);ctx.textAlign='center';}
-    else if(l.t==='total'){ctx.fillStyle=grad;ctx.beginPath();ctx.roundRect(PAD,y,W-PAD*2,h,14);ctx.fill();ctx.font='bold 18px Georgia,serif';ctx.fillStyle='white';ctx.fillText(l.txt,W/2,y+h-10);}
-    else if(l.t==='note'){ctx.font='italic 11px Arial,sans-serif';ctx.fillStyle='#7A3A55';ctx.fillText(l.txt,W/2,y+h-4);}
+    if(l.t==='header'){ctx.fillStyle=grad;ctx.beginPath();ctx.roundRect(0,y-PAD,W,90+PAD,0);ctx.fill();ctx.font='bold 38px CherryBomb, Georgia,serif';ctx.fillStyle='white';ctx.fillText('Menu Doces',W/2,y+38);ctx.font='500 13px Poppins, Arial,sans-serif';ctx.fillStyle='rgba(255,255,255,0.88)';ctx.fillText('Especial Dia das Mães 🌸',W/2,y+62);}
+    else if(l.t==='label'){ctx.font='700 11px Poppins,Arial,sans-serif';ctx.fillStyle='#7A3A55';ctx.fillText(l.txt,W/2,y+h-4);}
+    else if(l.t==='code'){ctx.font='900 36px Poppins,Arial,sans-serif';ctx.fillStyle='#D6004D';ctx.fillText(l.txt,W/2,y+h-6);}
+    else if(l.t==='field'){ctx.textAlign='left';ctx.font='700 13px Poppins,Arial,sans-serif';ctx.fillStyle='#7A3A55';const lw=ctx.measureText(l.label+': ').width;ctx.fillText(l.label+': ',PAD,y+h-4);ctx.font='500 13px Poppins,Arial,sans-serif';ctx.fillStyle='#3D1A2B';ctx.fillText(l.val,PAD+lw,y+h-4);ctx.textAlign='center';}
+    else if(l.t==='section'){ctx.fillStyle='rgba(214,0,77,0.07)';ctx.beginPath();ctx.roundRect(PAD,y,W-PAD*2,h+2,8);ctx.fill();ctx.font='700 11px Poppins,Arial,sans-serif';ctx.fillStyle='#D6004D';ctx.fillText(l.txt,W/2,y+h-4);}
+    else if(l.t==='item-name'){ctx.textAlign='left';ctx.font='700 13px Poppins,Arial,sans-serif';ctx.fillStyle='#3D1A2B';ctx.fillText(l.txt,PAD+8,y+h-4);ctx.textAlign='center';}
+    else if(l.t==='item-sab'){ctx.textAlign='left';ctx.font='500 11px Poppins,Arial,sans-serif';ctx.fillStyle='#7A3A55';ctx.fillText(l.txt,PAD+16,y+h-4);ctx.textAlign='center';}
+    else if(l.t==='total'){ctx.fillStyle=grad;ctx.beginPath();ctx.roundRect(PAD,y,W-PAD*2,h,14);ctx.fill();ctx.font='800 18px Poppins,Arial,sans-serif';ctx.fillStyle='white';ctx.fillText(l.txt,W/2,y+h-10);}
+    else if(l.t==='note'){ctx.font='italic 11px Poppins,Arial,sans-serif';ctx.fillStyle='#7A3A55';ctx.fillText(l.txt,W/2,y+h-4);}
     y+=h+4;
   }
   canvas.toBlob(blob=>{const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='reserva-'+r.codigo+'.jpeg';a.click();URL.revokeObjectURL(url);},'image/jpeg',0.95);
@@ -603,8 +631,8 @@ function verificarSenha(){
   else{document.getElementById('adminError').style.display='block';document.getElementById('adminSenha').value='';document.getElementById('adminSenha').focus();}
 }
 function fecharAdmin(){document.getElementById('adminPanel').style.display='none';}
-function renderRelatorio(){
-  const reservas=getReservas();
+async function renderRelatorio(){
+  const reservas=await getReservas();
   const se=document.getElementById('adminReportStats'), te=document.getElementById('adminReportTable');
   if(reservas.length===0){se.innerHTML='';te.innerHTML='<div class="no-data">Nenhuma reserva registrada ainda.</div>';return;}
   const tr=reservas.reduce((s,r)=>s+r.total,0), tc=reservas.reduce((s,r)=>s+r.itens.length,0);
@@ -612,8 +640,8 @@ function renderRelatorio(){
   const rows=reservas.map(r=>`<tr><td><strong>${r.codigo}</strong></td><td>${r.data}</td><td>${r.nome}</td><td>${r.tel}</td><td style="font-size:0.75rem">${r.itens.map(it=>'<strong>'+it.caixa+'</strong>: '+it.sabores.map(s=>s.nome+(s.qty>1?' x'+s.qty:'')).join(', ')).join('<br>')}</td><td><strong>R$ ${r.total},00</strong></td></tr>`).join('');
   te.innerHTML=`<div class="report-table-wrap"><table><thead><tr><th>Código</th><th>Data</th><th>Nome</th><th>Telefone</th><th>Itens</th><th>Total</th></tr></thead><tbody>${rows}</tbody></table></div>`;
 }
-function exportarCSV(){
-  const reservas=getReservas();
+async function exportarCSV(){
+  const reservas=await getReservas();
   if(reservas.length===0){alert('Nenhuma reserva para exportar.');return;}
   const header=['Código','Data','Nome','Telefone','Caixa','Sabores','Valor Caixa','Total Pedido'];
   const linhas=[];
@@ -624,8 +652,17 @@ function exportarCSV(){
   const a=document.createElement('a'); a.href=url; a.download='reservas_dia_das_maes_'+new Date().toISOString().slice(0,10)+'.csv'; a.click();
   URL.revokeObjectURL(url);
 }
-function limparDados(){
-  if(confirm('Apagar TODAS as reservas permanentemente?')){saveReservas([]);renderRelatorio();}
+async function limparDados(){
+  if(confirm('Apagar TODAS as reservas permanentemente?')){await saveReservas([]);renderRelatorio();}
+}
+
+function mascaraTel(input) {
+  let v = input.value.replace(/\D/g, '').slice(0, 11);
+  if (v.length <= 2)       v = v.replace(/(\d{0,2})/, '($1');
+  else if (v.length <= 6)  v = v.replace(/(\d{2})(\d{0,4})/, '($1) $2');
+  else if (v.length <= 10) v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+  else                      v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+  input.value = v;
 }
 </script>
 </body>
