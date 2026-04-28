@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -633,10 +633,9 @@ async function confirmarReserva(){
     console.warn('Erro ao salvar no servidor:', e);
   }
   if(btnConfirmar){ btnConfirmar.textContent='✅ Confirmar Reserva!'; btnConfirmar.disabled=false; }
-  irPara(6);
   document.getElementById('codigoReserva').textContent=codigo;
   document.getElementById('resumoSucesso').innerHTML=`<div style="background:var(--pink-pale);border-radius:14px;padding:16px;text-align:left;font-size:0.88rem;font-weight:500;line-height:1.9;margin-bottom:8px;"><p><strong>👤 Nome:</strong> ${clienteAtual.nome}</p><p><strong>📱 WhatsApp:</strong> ${clienteAtual.tel}</p><p><strong>📍 Retirada:</strong> ${localFull}</p><p><strong>📦 Caixinhas:</strong> ${itens.length} unidade(s)</p><p><strong>💰 Total:</strong> R$ ${totalVal},00</p></div>`;
-  irPara(5);
+  irPara(6);
 }
 function baixarComprovante(){
   if(!reservaAtual){alert('Nenhuma reserva ativa.');return;}
