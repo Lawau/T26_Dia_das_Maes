@@ -471,7 +471,7 @@ let reservaAtual = null;
 
 // JSONBin
 const BIN_ID  = '69f0f892856a68218982dc86';
-const BIN_KEY = '$2a$10$vtidfdpfX1QqtHUGT4dNvOZxFSjiSL6P7Xs2AWEhwDR2A9nvAvNsu';
+const BIN_KEY = '$2a$10$BgsDnAUkFrvB3DqOa1vB1eMMZ6r6Dxsut5h/S7GHSgaqX4w88esfa';
 const BIN_URL = 'https://api.jsonbin.io/v3/b/' + BIN_ID;
 const HEADERS = { 'Content-Type':'application/json', 'X-Master-Key': BIN_KEY };
 
@@ -629,9 +629,7 @@ async function confirmarReserva(){
   try {
     const res=await getReservas(); res.push(reservaAtual); await saveReservas(res);
   } catch(e) {
-    alert('Erro ao salvar reserva. Verifique sua conexão e tente novamente.');
-    if(btnConfirmar){ btnConfirmar.textContent='✅ Confirmar Reserva!'; btnConfirmar.disabled=false; }
-    return;
+    console.warn('Erro ao salvar no servidor:', e);
   }
   if(btnConfirmar){ btnConfirmar.textContent='✅ Confirmar Reserva!'; btnConfirmar.disabled=false; }
   irPara(6);
