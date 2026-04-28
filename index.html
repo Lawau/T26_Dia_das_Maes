@@ -255,7 +255,8 @@
   <div class="step-dot active" id="step1"><div class="dot">1</div><div class="label">Seus Dados</div></div>
   <div class="step-dot" id="step2"><div class="dot">2</div><div class="label">Caixinhas</div></div>
   <div class="step-dot" id="step3"><div class="dot">3</div><div class="label">Sabores</div></div>
-  <div class="step-dot" id="step4"><div class="dot">4</div><div class="label">Resumo</div></div>
+  <div class="step-dot" id="step4"><div class="dot">4</div><div class="label">Retirada</div></div>
+  <div class="step-dot" id="step5"><div class="dot">5</div><div class="label">Resumo</div></div>
 </div>
 
 <div class="main-container">
@@ -342,7 +343,35 @@
     </div>
   </div>
 
+  <!-- STEP 4 — RETIRADA -->
   <div class="section" id="sec4">
+    <div class="card">
+      <div class="card-title">Retirada 📍</div>
+      <div class="card-subtitle">Onde você vai retirar os docinhos?</div>
+      <div class="form-group">
+        <label for="localRetirada">Local de retirada</label>
+        <select id="localRetirada" onchange="toggleVendedor()" style="width:100%;padding:14px 18px;border:2.5px solid var(--pink-light);border-radius:var(--radius-lg);font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:500;color:var(--text-dark);background:var(--pink-pale);outline:none;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%228%22 viewBox=%220 0 12 8%22><path d=%22M1 1l5 5 5-5%22 stroke=%22%23D6004D%22 stroke-width=%222%22 fill=%22none%22/></svg>');background-repeat:no-repeat;background-position:right 16px center;transition:border-color 0.2s,box-shadow 0.2s;">
+          <option value="">Selecione...</option>
+          <option value="Sede Brooklyn">Sede Brooklyn</option>
+          <option value="Sede Leopoldina">Sede Leopoldina</option>
+          <option value="Instituto J&F">Instituto J&amp;F</option>
+          <option value="Direto com vendedor">Direto com vendedor</option>
+        </select>
+      </div>
+      <div id="vendedorWrap" style="display:none;" class="form-group">
+        <label for="nomeVendedor">Nome completo do vendedor</label>
+        <input type="text" id="nomeVendedor" placeholder="Ex: João Silva" autocomplete="off" />
+      </div>
+      <div style="height:8px;"></div>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <button class="btn-secondary" onclick="irPara(3)">← Voltar</button>
+        <button class="btn-primary" style="flex:1" onclick="irParaStep5()">Ver Resumo →</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section" id="sec5">
     <div class="card">
       <div class="card-title">Resumo da Reserva 📋</div>
       <div class="card-subtitle">Confira tudo antes de confirmar!</div>
@@ -350,13 +379,13 @@
       <div class="resumo-note">⚠️ O pagamento será combinado depois da confirmação.</div>
       <div style="height:20px;"></div>
       <div style="display:flex;gap:10px;align-items:center;">
-        <button class="btn-secondary" onclick="irPara(3)">← Voltar</button>
+        <button class="btn-secondary" onclick="irPara(4)">← Voltar</button>
         <button class="btn-primary" style="flex:1" onclick="confirmarReserva()">✅ Confirmar Reserva!</button>
       </div>
     </div>
   </div>
 
-  <div class="section" id="sec5">
+  <div class="section" id="sec6">
     <div class="card" style="text-align:center;">
       <div class="success-icon">🎉</div>
       <div class="success-title">Reserva feita!</div>
@@ -441,7 +470,7 @@ let reservaAtual = null;
 
 // JSONBin
 const BIN_ID  = '69f0bf7936566621a8fff41c';
-const BIN_KEY = '$2a$10$gHyJ3LTnZYnV8oqQtpl6oODzKP0.5B8VivZBPnI.eKVA0TPPyYn1q';
+const BIN_KEY = '\';
 const BIN_URL = 'https://api.jsonbin.io/v3/b/' + BIN_ID;
 const HEADERS = { 'Content-Type':'application/json', 'X-Master-Key': BIN_KEY };
 
@@ -461,6 +490,25 @@ async function saveReservas(arr){
 }
 function gerarCodigo(){ const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let r=''; for(let i=0;i<6;i++) r+=c[Math.floor(Math.random()*c.length)]; return r; }
 
+
+function irParaStep5(){
+  const local = document.getElementById('localRetirada').value;
+  if(!local){ alert('Escolha o local de retirada! 📍'); return; }
+  if(local === 'Direto com vendedor'){
+    const vend = document.getElementById('nomeVendedor').value.trim();
+    if(!vend){ alert('Informe o nome completo do vendedor! 👤'); return; }
+  }
+  construirResumo();
+  irPara(5);
+}
+function toggleVendedor(){
+  const local = document.getElementById('localRetirada').value;
+  const wrap  = document.getElementById('vendedorWrap');
+  wrap.style.display = local === 'Direto com vendedor' ? 'block' : 'none';
+  if(local !== 'Direto com vendedor'){
+    document.getElementById('nomeVendedor').value = '';
+  }
+}
 function irPara(n){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   document.getElementById('sec'+n).classList.add('active');
@@ -494,7 +542,7 @@ function irParaStep4(){
     if(!ok) break;
   }
   if(!ok){alert('⚠️ '+erroMsg);return;}
-  construirResumo(); irPara(4);
+  irPara(4);
 }
 function alterarQtdCaixa(id,delta){
   caixasQtd[id]=Math.max(0,caixasQtd[id]+delta);
@@ -547,6 +595,15 @@ function construirResumo(){
       container.innerHTML+=`<div class="resumo-item"><div class="resumo-item-header"><span class="resumo-item-name">${cxDef.nome}${qty>1?' #'+(i+1):''}</span><span class="resumo-item-price">R$ ${cxDef.preco},00</span></div><div class="resumo-sabores">${sr}</div></div>`;
     }
   }
+  const local = document.getElementById('localRetirada').value;
+  const vend  = document.getElementById('nomeVendedor').value.trim();
+  const localStr = local === 'Direto com vendedor' && vend ? local + ' (' + vend + ')' : local;
+  container.innerHTML += `<div class="resumo-item" style="border-color:var(--pink-medium);">
+    <div class="resumo-item-header">
+      <span class="resumo-item-name">📍 Local de Retirada</span>
+    </div>
+    <div style="font-size:0.88rem;font-weight:600;color:var(--text-dark);margin-top:4px;">${localStr}</div>
+  </div>`;
   container.innerHTML+=`<div class="resumo-total"><span>Total da encomenda</span><span>R$ ${total},00</span></div>`;
 }
 async function confirmarReserva(){
@@ -561,7 +618,10 @@ async function confirmarReserva(){
       itens.push({caixa:cxDef.nome,preco:cxDef.preco,sabores:sa});
     }
   }
-  reservaAtual={codigo,data:agora,nome:clienteAtual.nome,tel:clienteAtual.tel,itens,total:totalVal};
+  const localRet = document.getElementById('localRetirada').value;
+  const vendRet  = document.getElementById('nomeVendedor').value.trim();
+  const localFull = localRet === 'Direto com vendedor' && vendRet ? localRet + ' (' + vendRet + ')' : localRet;
+  reservaAtual={codigo,data:agora,nome:clienteAtual.nome,tel:clienteAtual.tel,itens,total:totalVal,local:localFull};
   // feedback visual durante o envio
   const btnConfirmar = document.querySelector('#sec4 .btn-primary');
   if(btnConfirmar){ btnConfirmar.textContent='Salvando... ⏳'; btnConfirmar.disabled=true; }
@@ -574,7 +634,7 @@ async function confirmarReserva(){
   }
   if(btnConfirmar){ btnConfirmar.textContent='✅ Confirmar Reserva!'; btnConfirmar.disabled=false; }
   document.getElementById('codigoReserva').textContent=codigo;
-  document.getElementById('resumoSucesso').innerHTML=`<div style="background:var(--pink-pale);border-radius:14px;padding:16px;text-align:left;font-size:0.88rem;font-weight:500;line-height:1.9;margin-bottom:8px;"><p><strong>👤 Nome:</strong> ${clienteAtual.nome}</p><p><strong>📱 WhatsApp:</strong> ${clienteAtual.tel}</p><p><strong>📦 Caixinhas:</strong> ${itens.length} unidade(s)</p><p><strong>💰 Total:</strong> R$ ${totalVal},00</p></div>`;
+  document.getElementById('resumoSucesso').innerHTML=`<div style="background:var(--pink-pale);border-radius:14px;padding:16px;text-align:left;font-size:0.88rem;font-weight:500;line-height:1.9;margin-bottom:8px;"><p><strong>👤 Nome:</strong> ${clienteAtual.nome}</p><p><strong>📱 WhatsApp:</strong> ${clienteAtual.tel}</p><p><strong>📍 Retirada:</strong> ${localFull}</p><p><strong>📦 Caixinhas:</strong> ${itens.length} unidade(s)</p><p><strong>💰 Total:</strong> R$ ${totalVal},00</p></div>`;
   irPara(5);
 }
 function baixarComprovante(){
@@ -584,7 +644,8 @@ function baixarComprovante(){
     {t:'header'},{t:'gap',h:18},
     {t:'label',txt:'CÓDIGO DA RESERVA'},{t:'code',txt:r.codigo},{t:'gap',h:10},
     {t:'field',label:'Nome',val:r.nome},{t:'field',label:'WhatsApp',val:r.tel},
-    {t:'field',label:'Data',val:r.data},{t:'gap',h:12},
+    {t:'field',label:'Data',val:r.data},{t:'field',label:'Retirada',val:r.local||''},
+    {t:'gap',h:12},
     {t:'section',txt:'ITENS DA RESERVA'},
   ];
   r.itens.forEach((it,idx)=>{
@@ -622,6 +683,9 @@ function novaReserva(){
   caixasQtd={cx4:0,cx6:0,cx6r:0,cx9:0};saboresPorCaixa={};clienteAtual={nome:'',tel:''};reservaAtual=null;
   document.getElementById('nome').value='';document.getElementById('telefone').value='';
   ['cx4','cx6','cx6r','cx9'].forEach(id=>{document.getElementById('qty-'+id).textContent='0';document.querySelector('[data-id="'+id+'"]').classList.remove('selected');});
+  document.getElementById('localRetirada').value='';
+  document.getElementById('nomeVendedor').value='';
+  document.getElementById('vendedorWrap').style.display='none';
   irPara(1);
 }
 function abrirLoginAdmin(){document.getElementById('adminOverlay').style.display='flex';document.getElementById('adminSenha').value='';document.getElementById('adminError').style.display='none';setTimeout(()=>document.getElementById('adminSenha').focus(),100);}
@@ -637,15 +701,15 @@ async function renderRelatorio(){
   if(reservas.length===0){se.innerHTML='';te.innerHTML='<div class="no-data">Nenhuma reserva registrada ainda.</div>';return;}
   const tr=reservas.reduce((s,r)=>s+r.total,0), tc=reservas.reduce((s,r)=>s+r.itens.length,0);
   se.innerHTML=`<div class="report-summary"><div class="stat-card"><div class="stat-val">${reservas.length}</div><div class="stat-label">Reservas</div></div><div class="stat-card"><div class="stat-val">${tc}</div><div class="stat-label">Caixinhas</div></div><div class="stat-card"><div class="stat-val">R$${tr}</div><div class="stat-label">Total Geral</div></div></div>`;
-  const rows=reservas.map(r=>`<tr><td><strong>${r.codigo}</strong></td><td>${r.data}</td><td>${r.nome}</td><td>${r.tel}</td><td style="font-size:0.75rem">${r.itens.map(it=>'<strong>'+it.caixa+'</strong>: '+it.sabores.map(s=>s.nome+(s.qty>1?' x'+s.qty:'')).join(', ')).join('<br>')}</td><td><strong>R$ ${r.total},00</strong></td></tr>`).join('');
-  te.innerHTML=`<div class="report-table-wrap"><table><thead><tr><th>Código</th><th>Data</th><th>Nome</th><th>Telefone</th><th>Itens</th><th>Total</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  const rows=reservas.map(r=>`<tr><td><strong>${r.codigo}</strong></td><td>${r.data}</td><td>${r.nome}</td><td>${r.tel}</td><td>${r.local||'—'}</td><td style="font-size:0.75rem">${r.itens.map(it=>'<strong>'+it.caixa+'</strong>: '+it.sabores.map(s=>s.nome+(s.qty>1?' x'+s.qty:'')).join(', ')).join('<br>')}</td><td><strong>R$ ${r.total},00</strong></td></tr>`).join('');
+  te.innerHTML=`<div class="report-table-wrap"><table><thead><tr><th>Código</th><th>Data</th><th>Nome</th><th>Telefone</th><th>Retirada</th><th>Itens</th><th>Total</th></tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 async function exportarCSV(){
   const reservas=await getReservas();
   if(reservas.length===0){alert('Nenhuma reserva para exportar.');return;}
-  const header=['Código','Data','Nome','Telefone','Caixa','Sabores','Valor Caixa','Total Pedido'];
+  const header=['Código','Data','Nome','Telefone','Retirada','Caixa','Sabores','Valor Caixa','Total Pedido'];
   const linhas=[];
-  reservas.forEach(r=>r.itens.forEach(it=>linhas.push([r.codigo,r.data,r.nome,r.tel,it.caixa,it.sabores.map(s=>s.nome+(s.qty>1?' x'+s.qty:'')).join(' | '),'R$ '+it.preco+',00','R$ '+r.total+',00'])));
+  reservas.forEach(r=>r.itens.forEach(it=>linhas.push([r.codigo,r.data,r.nome,r.tel,r.local||'',it.caixa,it.sabores.map(s=>s.nome+(s.qty>1?' x'+s.qty:'')).join(' | '),'R$ '+it.preco+',00','R$ '+r.total+',00'])));
   const csv=[header,...linhas].map(row=>row.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');
   const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
   const url=URL.createObjectURL(blob);
