@@ -96,9 +96,9 @@
     .steps-nav::before {
       content: ''; position: absolute;
       top: 43px; left: 50%; transform: translateX(-50%);
-      width: 52%; height: 3px; background: var(--pink-light); z-index: 0;
+      width: 62%; height: 3px; background: var(--pink-light); z-index: 0;
     }
-    .step-dot { display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; z-index: 1; width: 90px; }
+    .step-dot { display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; z-index: 1; width: 75px; }
     .step-dot .dot {
       width: 36px; height: 36px; border-radius: 50%;
       background: var(--pink-light); border: 3px solid var(--pink-medium);
@@ -257,6 +257,7 @@
   <div class="step-dot" id="step3"><div class="dot">3</div><div class="label">Sabores</div></div>
   <div class="step-dot" id="step4"><div class="dot">4</div><div class="label">Retirada</div></div>
   <div class="step-dot" id="step5"><div class="dot">5</div><div class="label">Resumo</div></div>
+  <div class="step-dot" id="step6"><div class="dot">6</div><div class="label">Confirmado</div></div>
 </div>
 
 <div class="main-container">
@@ -470,7 +471,7 @@ let reservaAtual = null;
 
 // JSONBin
 const BIN_ID  = '69f0bf7936566621a8fff41c';
-const BIN_KEY = '$2a$10$BgsDnAUkFrvB3DqOa1vB1eMMZ6r6Dxsut5h/S7GHSgaqX4w88esfa';
+const BIN_KEY = '\';
 const BIN_URL = 'https://api.jsonbin.io/v3/b/' + BIN_ID;
 const HEADERS = { 'Content-Type':'application/json', 'X-Master-Key': BIN_KEY };
 
